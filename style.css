@@ -1,0 +1,414 @@
+/* Base Styles & Reset */
+:root {
+    --color-primary: #81c784; /* Soft Mint Green */
+    --color-secondary: #ffab91; /* Soft Peach/Coral */
+    --color-dark: #37474f; /* Dark Gray for text */
+    --color-light: #ffffff;
+    --color-background: #f4f6f9; /* Off-White/Light Gray background */
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Lora', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-dark);
+    line-height: 1.6;
+    background-color: var(--color-background);
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin-bottom: 0.5em;
+    color: var(--color-dark);
+}
+
+h2 { font-size: 2.5em; font-weight: 500;}
+h3 { font-size: 1.8em; margin-bottom: 1.5em; text-align: center; }
+
+strong { font-weight: 700; color: var(--color-dark); }
+
+/* Header and Navigation */
+#header {
+    background: var(--color-light);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+#header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Styling (New) */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between logo image and text */
+}
+
+.logo-img {
+    height: 30px; /* Adjust size as needed for your logo.png */
+    width: auto;
+}
+
+.logo-text {
+    /* Existing .logo styles will apply, but using this for clarity */
+    font-size: 1.5em;
+    color: var(--color-dark);
+    font-weight: 700;
+    margin: 0; /* Remove default h1 margin */
+}
+
+/* Update existing .logo style if it clashes with .logo-text, or rename .logo to .logo-text in your CSS */
+/* If you use the code above, ensure you remove or adjust the original h1.logo style to prevent conflict. */
+
+nav a {
+    color: var(--color-dark);
+    text-decoration: none;
+    margin-left: 25px;
+    font-family: var(--font-heading);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--color-primary);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background: var(--color-primary);
+    color: var(--color-light);
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #68b36b; /* Darker mint */
+    transform: translateY(-2px);
+}
+
+.btn i { margin-left: 8px; }
+
+/* Sections */
+section {
+    padding: 80px 0;
+}
+
+/* 1. Hero Section */
+.hero {
+    background: linear-gradient(135deg, #e8f5e9 0%, #fce4ec 100%); /* Soft gradient */
+    padding: 100px 0;
+    height: 700px;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    padding-top: 50px;
+}
+
+.hero-text {
+    max-width: 60%;
+}
+
+.greeting {
+    font-family: var(--font-heading);
+    color: var(--color-secondary);
+    font-size: 1.2em;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.hero-text h2 {
+    font-size: 3em;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero-text .tagline {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+.profile-img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid var(--color-light);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+}
+
+/* 2. Services Section */
+.services {
+    background-color: var(--color-light);
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.service-card {
+    background: var(--color-background);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-card .icon {
+    font-size: 2.5em;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+}
+
+.service-card h4 {
+    font-size: 1.3em;
+    color: var(--color-dark);
+    margin-bottom: 10px;
+}
+
+.skills-tag {
+    display: inline-block;
+    background: #e0f2f1; /* Lighter mint for tag */
+    color: #00796b; /* Darker teal for text */
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    margin-top: 15px;
+    font-family: var(--font-heading);
+    font-weight: 500;
+}
+
+/* 3. About Me Section */
+.about {
+    background-color: #fce4ec; /* Light Pink/Peach background */
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.about-text {
+    flex: 2;
+}
+
+.highlight-text {
+    font-style: italic;
+    margin-top: 20px;
+    padding: 15px;
+    border-left: 4px solid var(--color-secondary);
+    background: #fffafa;
+}
+
+.ready-to-work {
+    flex: 1;
+    background: var(--color-light);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.ready-to-work h4 {
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.ready-to-work ul {
+    list-style: none;
+}
+
+.ready-to-work ul li {
+    margin-bottom: 10px;
+    font-size: 0.95em;
+}
+
+.ready-to-work i {
+    color: var(--color-primary);
+    margin-right: 10px;
+}
+
+/* 4. Contact Section */
+.contact {
+    background: var(--color-background);
+    text-align: center;
+}
+
+.cta-subtitle {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    text-align: left;
+    margin-top: 40px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: var(--font-body);
+    font-size: 1em;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.send-btn {
+    width: 100%;
+    text-align: center;
+}
+
+.form-note {
+    font-size: 0.8em;
+    color: #777;
+    margin-top: 10px;
+}
+
+.direct-contact {
+    padding: 20px;
+    background: var(--color-light);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.direct-contact h4 {
+    text-align: left;
+    margin-bottom: 20px;
+    color: var(--color-secondary);
+}
+
+.direct-contact p {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.icon-small {
+    color: var(--color-primary);
+    margin-right: 15px;
+    font-size: 1.1em;
+}
+
+.direct-contact a {
+    color: var(--color-dark);
+    text-decoration: none;
+}
+
+.direct-contact a:hover {
+    color: var(--color-primary);
+}
+
+.social-links {
+    margin-top: 25px;
+}
+
+.social-links a {
+    color: var(--color-dark);
+    font-size: 1.5em;
+    margin-right: 20px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--color-secondary);
+}
+
+
+/* Footer */
+footer {
+    background: var(--color-dark);
+    color: var(--color-light);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.85em;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 900px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-text {
+        max-width: 100%;
+        order: 2;
+    }
+
+    .hero-image-container {
+        order: 1;
+        margin-bottom: 30px;
+    }
+    
+    .about-content {
+        flex-direction: column;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        display: none; /* Simplification for mobile */
+    }
+
+    #header .container {
+        justify-content: center;
+    }
+}
